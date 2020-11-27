@@ -5,29 +5,41 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<table>
+		<a href=" {{ route('Product.create') }} " class="btn btn-success my-2">
+			<span class="fa fa-plus"> Ajouter un produit</span>
+		</a>
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>  </th>
+					<th>Nom produit :</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
+			<tbody>
+				@foreach ($products as $product)
+						<tr>
+							<td>
+								{{ $product->name }}
+							</td>
+							<td>
+								<a href="{{ route('Product.show', ['Product' => $product->id]) }} " class="btn btn-success">
+									<span class="fa fa-eye"> Détails</span>
+								</a>
+								<a href="{{ route('Product.edit', ['Product' => $product->id]) }}" class="btn btn-primary">
+									<span class="fa fa-edit"> Modifier</span>
+								</a>
+								<form action="{{ route('Product.destroy', ['Product' => $product->id]) }}" method="POST" style="display: contents">
+									@csrf
+									@method('DELETE')
+									<button class="btn btn-danger" type="submit">
+										<span class="fa fa-trash"> Supprimer</span>
+									</button>
+								</form>
+							</td>
+						</tr>
+				@endforeach
+			</tbody>
 		</table>
 	</div>
 </div>
-@foreach ($products as $product)
-Produit: <a href="{{ route('Product.show', ['Product' => $product->id]) }}">{{ $product->name}}</a><br>
-<a href="{{ route('Product.edit', ['Product' => $product->id]) }}">Editer</a>
-<form action="{{ route('CartProduct.store') }}" method="POST">
-	@csrf
-	Quantité: 
-	<input type="number" name="quantity" value="1">
-	<input type="hidden" name="product_id" value="{{ $product->id }}">
-	<button type="submit">Ajouter au panier</button>
-</form>
-<form action="{{ route('Product.destroy', ['Product' => $product->id]) }}" method="POST">
-	@csrf
-	@method('DELETE')
-	<button type="submit">Supprimer</button>
-</form>
-@endforeach
 @endsection
