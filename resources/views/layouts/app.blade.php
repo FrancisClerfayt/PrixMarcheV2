@@ -112,43 +112,49 @@
 		@yield('content')
 	</main>
 	
-	<footer>
-		<div class="container">
-			<div class="newsletter">
-				<p>Inscription à la newsletter</p>
-				<div class="wrap">
-					<div class="search" >
-						<input type="text" class="searchTerm">
+	<footer class="footer_background">
+		<div class="row">
+			<div class="col p-3">
+				<div class="newsletter">
+					<p>Inscription à la newsletter</p>
+					<div class="wrap">
+						<div class="search">
+							<input type="text" class="searchTerm">
+						</div>
 					</div>
+					<button class="btn btn-secondary">S'abonner maintanant</button>
 				</div>
-				<button class="searchButton">S'abonner maintanant</button>
 			</div>
-			
-			<div class="delivery">
-				<img src="img/refresh-cw.png" alt="">
-				<p>Retrait au magasin ou sur les marchés</p>
+			<div class="col p-3">
+				<div class="delivery">
+					<img src="img/refresh-cw.png" alt="">
+					<p>Retrait au magasin ou sur les marchés</p>
+				</div>
 			</div>
-			
-			<div class="payment">
-				<img src="img/credit-card.png" alt="">
-				<p>Paiement lors du retrait CB à partir de 10€, espèces</p>
+			<div class="col p-3">
+				<div class="payment">
+					<img src="img/credit-card.png" alt="">
+					<p>Paiement lors du retrait CB à partir de 10€, espèces</p>
+				</div>
 			</div>
-			
-			<div class="menu">
-				<ul>
-					<li><a href="{{ route('delivery') }}">Livraison et retrait</a></li>
-					<li><a href="{{ route('question') }}">F.A.Q</a></li>
-					<li><a href="{{ route('contact') }}">Contact</a></li>
-				</ul>
+			<div class="col p-3">
+				<div class="menu">
+					<ul>
+						<li><a href="{{ route('delivery') }}">Livraison et retrait</a></li>
+						<li><a href="{{ route('question') }}">F.A.Q</a></li>
+						<li><a href="{{ route('contact') }}">Contact</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<ul class="bottom">
-			<li>C.G.U</li>
-			<li>Politique de confidentialité</li>
-			<li>Conditions de retour</li>
-			<li>© 2020, Prix Marché.</li>
-		</ul>
+		<div class="row justify-content-end footer_bottom">
+			<ul class="d-flex flex-row-reverse align-content-around">
+				<li class="mx-2">C.G.U</li>
+				<li class="mx-2">Politique de confidentialité</li>
+				<li class="mx-2">Conditions de retour</li>
+				<li class="mx-2">© 2020, Prix Marché.</li>
+			</ul>
+		</div>
 	</footer>
-</div>
 </body>
 </html>

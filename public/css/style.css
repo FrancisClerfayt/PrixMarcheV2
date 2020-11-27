@@ -9,12 +9,18 @@
 }
 
 .category_rectangle:nth-child(2n),
-.header_background {
+.header_background,
+.footer_background {
   background-color: #256588;
 }
 
-.nav_background {
+.nav_background,
+.footer_bottom {
 	background-color: #1F5776;
+}
+
+.footer_bottom ul {
+  list-style-type: none;
 }
 
 .category_rectangle:nth-child(2n):hover {
