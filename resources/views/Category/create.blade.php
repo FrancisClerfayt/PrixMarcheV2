@@ -12,6 +12,10 @@
 						<input type="text" name="name" id="name" class="form-control" required>
 					</div>
 					<div class="form-group">
+						<label for="picture">Chemin de l'icône</label>
+						<input type="text" name="picture" id="picture" class="form-control" required>
+					</div>
+					<div class="form-group">
 						<input type="submit" value="Ajouter">
 					</div>
 				</form>
