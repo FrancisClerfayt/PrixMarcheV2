@@ -14,7 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+      $cart = Cart::with(['user'])->get();
+      return view('Cart.index', ['carts' => $cart]);
     }
 
     /**
@@ -41,12 +42,13 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show($id)
     {
-        //
+      $cart = Cart::with(['user', 'cart_products'])->find($id);
+      return view('Cart.show', ['cart' => $cart]);
     }
 
     /**
@@ -75,11 +77,11 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cart  $cart
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+      return redirect()->route('Cart.index');
     }
 }
