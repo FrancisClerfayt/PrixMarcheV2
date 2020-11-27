@@ -19,12 +19,6 @@
 				<li class="list-group-item">
 					Image alt: {{ $product->picture_alt }}
 				</li>
-				<li class="list-group-item">
-					created_at: {{ $product->created_at }}
-				</li>
-				<li class="list-group-item">
-					updated_at: {{ $product->updated_at }}
-				</li>
 			</ul>
 		</div>
 	</div>

@@ -1,0 +1,42 @@
+.category_rectangle {
+  background-color: #E46F1E;
+  color: #F5F5F5;
+  height: 100px;
+}
+
+.category_rectangle:hover {
+  background-color: #B04800;
+}
+
+.category_rectangle:nth-child(2n),
+.header_background {
+  background-color: #256588;
+}
+
+.nav_background {
+	background-color: #1F5776;
+}
+
+.category_rectangle:nth-child(2n):hover {
+  background-color: #02517D;
+}
+
+.delivery_informations {
+	background-color: #E46F1E;
+}
+
+.delivery_informations:nth-child(3n) {
+	background-color: #256588;
+	color: #F5F5F5;
+}
+
+.category_name {
+	font-size: 25px;
+	color: #F5F5F5;
+}
+
+.link-category,
+.link-category:hover {
+  text-decoration: none;
+  color: white;
+}

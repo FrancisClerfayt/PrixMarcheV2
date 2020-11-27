@@ -4,8 +4,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-8">
-			<form action="{{ route('Product.store') }}" method="POST" >
+			<form action="{{ route('Product.update', ['Product'=>$product->id]) }}" method="POST" >
 				@csrf
+				@method('PUT')
 				<div class="form-group">
 					<label for="name">Nom du produit</label>
 					<input value=" {{ $product->name }} " name="name" id="name" type="text" tabindex="1" required autofocus>
@@ -34,7 +35,7 @@
 						@endforeach
 					</select>
 				</div>
-				<button name="submit" type="submit" id="contact-submit">Modifier Produit</button>
+				<button class="btn btn-primary" name="submit" type="submit" id="contact-submit">Modifier Produit</button>
 			</form>
 		</div>
 	</div>
