@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('city')->nullable();
-            $table->boolean('admin');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
